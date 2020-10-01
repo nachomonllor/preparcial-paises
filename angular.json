@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "preparcial": {
+    "adminpro_starterkit_firebase": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,12 +17,23 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/preparcial",
+            "outputPath": "dist/adminpro_starterkit_firebase",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "allowedCommonJsDependencies": [
+              "rxjs-compat",
+              "angularfire2",
+              "@firebase/auth",
+              "@firebase/firestore",
+              "@firebase/app",
+              "firebase/app",
+              "@angular/common/locales/es",
+              "@firebase/component",
+              "lodash"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -66,18 +77,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "preparcial:build"
+            "browserTarget": "adminpro_starterkit_firebase:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "preparcial:build:production"
+              "browserTarget": "adminpro_starterkit_firebase:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "preparcial:build"
+            "browserTarget": "adminpro_starterkit_firebase:build"
           }
         },
         "test": {
@@ -114,15 +125,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "preparcial:serve"
+            "devServerTarget": "adminpro_starterkit_firebase:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "preparcial:serve:production"
+              "devServerTarget": "adminpro_starterkit_firebase:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "preparcial"
+    }
+  },
+  "defaultProject": "adminpro_starterkit_firebase",
+  "cli": {
+    "analytics": "849d62ea-5643-4f27-b31c-f2a36ec3ad5f"
+  }
 }
